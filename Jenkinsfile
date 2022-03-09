@@ -3,7 +3,7 @@ pipeline{
 	agent any
 
 	environment {
-		DOCKERHUB_CREDENTIALS=credentials('bernardo9999-dockerhub')
+		DOCKERHUB_CREDENTIALS=credentials('pereirajair')
 	}
 
 	stages {
@@ -11,7 +11,7 @@ pipeline{
 		stage('Build') {
 
 			steps {
-				sh 'docker build -t bernardo9999/nodeapp:latest .'
+				sh 'docker build -t pereirajair/nodeapp:latest .'
 			}
 		}
 
@@ -25,7 +25,7 @@ pipeline{
 		stage('Push') {
 
 			steps {
-				sh 'docker push bernardo9999/nodeapp:latest'
+				sh 'docker push pereirajair/nodeapp:latest'
 			}
 		}
 	}
